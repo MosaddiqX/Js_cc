@@ -1,61 +1,90 @@
-// For format details, see https://aka.ms/devcontainer.json. For config options, see the
-// README at: https://github.com/devcontainers/templates/tree/main/src/javascript-node
 {
-	"name": "Node.js",
-	// Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
+	"name": "Enhanced Node.js Workspace",
 	"image": "mcr.microsoft.com/devcontainers/javascript-node:1-22-bookworm",
 	"features": {
-		"ghcr.io/devcontainers-extra/features/jshint:2": {}
+		"ghcr.io/devcontainers-extra/features/jshint:2": {},
+		"ghcr.io/devcontainers/features/git:1": {},
+		"ghcr.io/devcontainers/features/github-cli:1": {}
 	},
-  "customizations": {
-    "vscode": {
-      "settings": {
-        "workbench.editor.decorations.badges": false,
-        "workbench.editor.highlightModifiedTabs": false,
-        "workbench.startupEditor": "none",
-        "workbench.activityBar.visible": true,
-        "workbench.statusBar.visible": true,
-        "editor.fontFamily": "'Fira Code', Menlo, Monaco, 'Courier New', monospace",
-        "editor.fontLigatures": true,
-        "editor.fontSize": 14,
-        "editor.lineHeight": 24,
-        "editor.renderWhitespace": "boundary",
-        "editor.minimap.enabled": false,
-        "editor.overviewRulerBorder": false,
-        "editor.smoothScrolling": true,
-        "editor.scrollBeyondLastLine": false,
-        "explorer.autoReveal": false,
-        "explorer.compactFolders": false,
-        "explorer.openEditors.visible": 1,
-        "breadcrumbs.enabled": false,
-        "terminal.integrated.fontSize": 13,
-        "terminal.integrated.fontFamily": "'Fira Code', monospace",
-        "terminal.integrated.cursorStyle": "line",
-        "terminal.integrated.lineHeight": 1.2,
-        "files.autoSave": "onFocusChange",
-        "files.trimTrailingWhitespace": true,
-        "editor.formatOnSave": false,
-        "editor.defaultFormatter": null,
-        "window.zoomLevel": 1,
-        "window.titleBarStyle": "custom",
-        "window.menuBarVisibility": "compact"
-      },
-      "extensions": [
-      ]
-    }
-  }
-	// Features to add to the dev container. More info: https://containers.dev/features.
-	// "features": {},
+	"customizations": {
+		"vscode": {
+			"settings": {
+				// Editor Customizations
+				"workbench.editor.decorations.badges": false,
+				"workbench.editor.highlightModifiedTabs": false,
+				"workbench.startupEditor": "none",
+				"workbench.activityBar.visible": true,
+				"workbench.statusBar.visible": true,
+				"workbench.sideBar.location": "right",
+				"window.menuBarVisibility": "compact",
+				"window.zoomLevel": 1,
+				"window.titleBarStyle": "custom",
+				"explorer.autoReveal": false,
+				"explorer.compactFolders": false,
+				"explorer.openEditors.visible": 1,
 
-	// Use 'forwardPorts' to make a list of ports inside the container available locally.
-	// "forwardPorts": [],
+				// Editor Preferences
+				"editor.fontFamily": "'Fira Code', 'JetBrains Mono', Menlo, Monaco, 'Courier New', monospace",
+				"editor.fontLigatures": "'ss01', 'ss02', 'calt', 'dlig'",
+				"editor.fontSize": 16,
+				"editor.lineHeight": 28,
+				"editor.smoothScrolling": true,
+				"editor.renderWhitespace": "boundary",
+				"editor.scrollBeyondLastLine": false,
+				"editor.renderControlCharacters": false,
+				"editor.tokenColorCustomizations": {
+					"textMateRules": [
+						{
+							"scope": ["comment", "keyword", "variable.language"],
+							"settings": { "fontStyle": "italic" }
+						}
+					]
+				},
 
-	// Use 'postCreateCommand' to run commands after the container is created.
-	// "postCreateCommand": "yarn install",
+				// Formatting & Linting
+				"editor.formatOnSave": true,
+				"editor.defaultFormatter": "esbenp.prettier-vscode",
+				"files.trimTrailingWhitespace": true,
+				"files.insertFinalNewline": true,
+				"files.autoSave": "onFocusChange",
+				"[javascript]": {
+					"editor.defaultFormatter": "esbenp.prettier-vscode"
+				},
+				"[json]": {
+					"editor.defaultFormatter": "vscode.json-language-features"
+				},
 
-	// Configure tool-specific properties.
-	// "customizations": {},
+				// Terminal Customizations
+				"terminal.integrated.fontSize": 14,
+				"terminal.integrated.lineHeight": 1.2,
+				"terminal.integrated.cursorStyle": "line",
+				"terminal.integrated.fontFamily": "'Fira Code', monospace",
 
-	// Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
-	// "remoteUser": "root"
+				// Visual Enhancements
+				"editor.minimap.enabled": false,
+				"editor.overviewRulerBorder": false,
+				"breadcrumbs.enabled": false,
+				"editor.lineNumbers": "relative",
+				"editor.renderLineHighlight": "none",
+				"workbench.editor.showTabs": "none",
+
+				// Theme
+				"workbench.colorTheme": "Catppuccin Latte",
+				"workbench.iconTheme": "fluent-icons",
+				"material-icon-theme.files.color": "#42a5f5"
+			},
+			"extensions": [
+				"Catppuccin.catppuccin-vsc",
+				"aleleba.fira-code-material-icon-theme",
+				"esbenp.prettier-vscode",
+				"xabikos.JavaScriptSnippets",
+				"miguelsolorio.fluent-icons",
+				"WallabyJs.quokka-vscode",
+				"ms-vscode.vscode-typescript-next"
+			]
+		}
+	},
+	"postCreateCommand": "npm install",
+	"forwardPorts": [],
+	"remoteUser": "node"
 }
