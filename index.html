@@ -3,18 +3,175 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Coding</title>
-    <link rel="stylesheet" href="./dist/styles.css" />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;400;700&family=Raleway:wght@300;400;700&display=swap" rel="stylesheet">
+    <title>Event Practice</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
 
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f9;
+        color: #333;
+        padding: 20px;
+      }
+
+      header {
+        text-align: center;
+        margin-bottom: 20px;
+      }
+
+      header h1 {
+        font-size: 2rem;
+        color: #4caf50;
+      }
+
+      section {
+        margin-bottom: 20px;
+        padding: 15px;
+        background: #fff;
+        border-radius: 8px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      }
+
+      section h2 {
+        font-size: 1.5rem;
+        color: #4caf50;
+        margin-bottom: 10px;
+      }
+
+      button {
+        background-color: #4caf50;
+        color: #fff;
+        border: none;
+        padding: 10px 15px;
+        border-radius: 4px;
+        font-size: 1rem;
+        cursor: pointer;
+        margin: 5px 0;
+        transition: all 0.3s ease;
+      }
+
+      button:hover {
+        background-color: #45a049;
+      }
+
+      input,
+      textarea {
+        width: 100%;
+        padding: 10px;
+        margin: 10px 0;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        font-size: 1rem;
+        transition: all 0.3s ease;
+      }
+
+      /* Focus Effect */
+      input:focus,
+      textarea:focus {
+        border-color: #4caf50;
+        outline: none;
+        box-shadow: 2px 3px 3px rgba(76, 175, 80, 0.125);
+        /* background: #fbfcfb;*/
+      }
+
+      input::placeholder,
+      textarea::placeholder {
+        color: #aaa;
+      }
+
+      input:focus::placeholder,
+      textarea:focus::placeholder {
+        color: transparent;
+      }
+
+      ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+
+      ul li {
+        padding: 10px;
+        background: #f4f4f4;
+        margin: 5px 0;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+      }
+    </style>
   </head>
+  <body>
+    <header>
+      <h1>Event Practice</h1>
+    </header>
 
-  <body class="w-screen h-screen bg-slate-950">
+    <!-- Click Event Section -->
+    <section id="click-section">
+      <h2>Click Event</h2>
+      <button id="click-btn">Click Me!</button>
+      <p id="click-result">Click the button above to see a message here.</p>
+    </section>
 
-    <div class="w-full h-full overflow-hidden flex items-center justify-center">
-      <h1 class="text-gradient h1-t">Coding</h1>
-    </div>
+    <!-- Input Event Section -->
+    <section id="input-section">
+      <h2>Input Event</h2>
+      <label for="name-input">Enter your name:</label>
+      <input type="text" id="name-input" placeholder="Type something..." />
+      <p id="input-result">Your name will appear here as you type.</p>
+    </section>
 
-    <script type="module" src="/src/app.js"></script>
+    <!-- Hover Event Section -->
+    <section id="hover-section">
+      <h2>Hover Event</h2>
+      <ul>
+        <li class="hover-item">Hover over me 1</li>
+        <li class="hover-item">Hover over me 2</li>
+        <li class="hover-item">Hover over me 3</li>
+      </ul>
+      <p id="hover-result">Hover over the list items to see a change.</p>
+    </section>
+
+    <!-- Form Submission Event Section -->
+    <section id="form-section">
+      <h2>Form Submission</h2>
+      <form id="form">
+        <label for="message">Enter a message:</label>
+        <textarea
+          id="message"
+          rows="3"
+          placeholder="Type your message here..."
+        ></textarea>
+        <button type="submit">Submit</button>
+      </form>
+      <p id="form-result">Submit the form to see the result.</p>
+    </section>
+
+    <!-- Keyboard Event Section -->
+    <section id="keyboard-section">
+      <h2>Keyboard Events</h2>
+      <p>Press any key inside the box below:</p>
+      <textarea
+        id="keyboard-input"
+        rows="3"
+        placeholder="Type here..."
+      ></textarea>
+      <p id="keyboard-result">Key pressed: None</p>
+    </section>
+
+    <script src="/src/01_Basic/04_dom.js"></script>
+    <script>
+      // Practice Questions:
+      // 1. Add a click event listener to the "Click Me!" button that changes the text inside the #click-result paragraph.
+      // 2. Add an input event listener to the #name-input field to update the #input-result paragraph as the user types.
+      // 3. Add a hover event listener to each .hover-item in the list to highlight the item (e.g., change its background color).
+      // 4. Prevent the default action of the form submission and display the submitted message in #form-result.
+      // 5. Add a keydown event listener to the #keyboard-input textarea to display the last key pressed in the #keyboard-result paragraph.
+
+      // Challenge:
+      // Combine multiple events, such as adding both click and hover events to the same element, and handle them differently.
+    </script>
   </body>
 </html>

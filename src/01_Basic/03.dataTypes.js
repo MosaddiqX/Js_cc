@@ -22,7 +22,7 @@ let age = 25; // Number
 let name = "John Doe"; // String
 let isStudent = true; // Boolean
 let emptyValue = null; // Null
-let notDefined ; // Undefined
+let notDefined; // Undefined
 let uniqueKey = Symbol("id"); // Symbol
 
 // 2. Non-Primitive Data Types
@@ -82,14 +82,14 @@ let product = num1 * num2;
 let quotient = num1 / num2;
 let remainder = num1 % num2;
 
-// console.table([
-//   { Operation: "Sum", Result: sum },
-//   { Operation: "Difference", Result: difference },
-//   { Operation: "Power", Result: power },
-//   { Operation: "Product", Result: product },
-//   { Operation: "Quotient", Result: quotient },
-//   { Operation: "Remainder", Result: remainder },
-// ]);
+console.table([
+  { Operation: "Sum", Result: sum },
+  { Operation: "Difference", Result: difference },
+  { Operation: "Power", Result: power },
+  { Operation: "Product", Result: product },
+  { Operation: "Quotient", Result: quotient },
+  { Operation: "Remainder", Result: remainder },
+]);
 
 // Increment and Decrement Operators
 // ---------------------------------
@@ -110,8 +110,8 @@ num2--; // Decrement num2 by 1 (num2 = num2 - 1)
 */
 
 // Relational Operators
-let result1 = num1 > num2;  // true
-let result2 = num1 < num2;  // false
+let result1 = num1 > num2; // true
+let result2 = num1 < num2; // false
 let result3 = num1 >= num2; // true
 let result4 = num1 <= num2; // false
 let result5 = num1 == num2; // false
@@ -135,10 +135,11 @@ let result6 = num1 != num2; // true
 */
 
 // Example:
-let a = 10, b = "10";
+let a = 10,
+  b = "10";
 
 console.log(a === b); // false (strict equality - type mismatch)
-console.log(a == b);  // true  (loose equality - values match)
+console.log(a == b); // true  (loose equality - values match)
 
 // Truthy and Falsy Values
 /*
@@ -147,29 +148,11 @@ console.log(a == b);  // true  (loose equality - values match)
 */
 
 // Examples of truthy and falsy values
-console.log(Boolean(1));          // true (truthy)
-console.log(Boolean(0));          // false (falsy)
-console.log(Boolean("hello"));    // true (truthy)
-console.log(Boolean(""));         // false (falsy)
-console.log(Boolean(null));       // false (falsy)
-console.log(Boolean([]));         // true (truthy)
-console.log(Boolean({}));         // true (truthy)
-console.log(Boolean(NaN));        // false (falsy)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+console.log(Boolean(1)); // true (truthy)
+console.log(Boolean(0)); // false (falsy)
+console.log(Boolean("hello")); // true (truthy)
+console.log(Boolean("")); // false (falsy)
+console.log(Boolean(null)); // false (falsy)
+console.log(Boolean([])); // true (truthy)
+console.log(Boolean({})); // true (truthy)
+console.log(Boolean(NaN)); // false (falsy)
